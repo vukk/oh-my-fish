@@ -8,18 +8,21 @@ end
 
 function git_module_output
   if [ (_git_branch_name) ]
-    set git_branch (_git_branch_name)
+    set -g git_branch (_git_branch_name)
 
     if [ (_is_git_dirty) ]
       if set -q GIT_MODULE_DIRTY
-        set git_dirty $GIT_MODULE_DIRTY
+        set -g git_dirty $GIT_MODULE_DIRTY
       else
-        set git_dirty "✗"
+        set -g git_dirty "✗"
       end
     end
 
     if set -q GIT_MODULE_OUTPUT
-      eval echo $GIT_MODULE_OUTPUT
+      module_output $GIT_MODULE_OUTPUT
     end
   end
+
+  set -e git_branch
+  set -e git_dirty
 end

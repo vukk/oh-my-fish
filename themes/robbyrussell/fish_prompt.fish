@@ -21,7 +21,8 @@ function fish_prompt
   end
   set -l cwd $cyan(basename (prompt_pwd))
 
-  set -gx GIT_MODULE_OUTPUT '(set_color -o blue)git:\((set_color -o red)$git_branch(set_color -o blue)\) (set_color -o yellow)$git_dirty'
-  echo -n -s $arrow $cwd ' ' (git_module_output) ' ' $normal
+  set -g GIT_MODULE_DIRTY "✗ "
+  set -g GIT_MODULE_OUTPUT '$bold_blue git:\($bold_red $git_branch $bold_blue\) $space $bold_yellow $git_dirty'
+  echo -n -s $arrow $cwd ' ' (git_module_output) $normal
 end
 
