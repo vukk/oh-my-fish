@@ -1,0 +1,2 @@
+# Start mocp-scrobbler when starting mocp if the scrobbler exist
+test -f (which mocp); and test -f (which mocp-scrobbler.py); and alias mocp "mocp-scrobbler.py -d; and mocp"
