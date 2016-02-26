@@ -1,3 +1,5 @@
 set --universal fish_user_paths $fish_user_paths ~/bin
 set --universal fish_user_paths $fish_user_paths /Applications/Postgres.app/Contents/Versions/9.4/bin
-#set PATH /Applications/Postgres.app/Contents/Versions/9.4/bin $PATH
+set --universal fish_user_paths $fish_user_paths ~/miniconda3/bin
+
+set --universal ANDROID_HOME /usr/local/opt/android-sdk

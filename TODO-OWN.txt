@@ -1,0 +1,2 @@
+loop ~/opt/<pkg>/bin to PATH
+upgrade to new oh-my-fish
